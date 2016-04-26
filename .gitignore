@@ -1,0 +1,69 @@
+import java.util.Random;
+
+public class Driver 
+{
+	public static void main(String[] args)
+	{
+		Integer[] arrayOfNumbers = new Integer[10];
+		Driver.fillArrayWithRandomInts(arrayOfNumbers);
+		Driver.printIntArray(arrayOfNumbers);
+		Driver.BubbleSort(arrayOfNumbers);
+		Driver.printIntArray(arrayOfNumbers);
+	}
+	
+	public static void BubbleSort(Integer [ ] num)
+	{
+		int i;
+	    boolean bool = true;   
+	    int bubble;   
+
+	    while (bool)
+	     {
+	    	  bool = false;    
+	        for( i = 0; i < num.length -1; i++ )
+	        {
+	        	if ( num[i] < num[i+1] )   
+	            {
+	        		bubble = num[i];                
+	                num[i] = num[i+1 ];
+	                num[i+1 ] = bubble;
+	                bool = true;          
+	            } 
+	        } 
+	     } 
+	} 
+	static void sortArray(Integer[] values)
+	{
+	    for (int x = values.length / 2; x > 0; x = x == 2 ? 1 : (int) (x / 2.2))            
+	        {
+	            for (int i = x; i < values.length; i++)
+	            {
+	                Integer array = values[i];
+	                int j = i;
+	                for (;j >= x && array.compareTo(values[j-x]) < 0; j -= x)
+	                {
+	                    values[j] = values[j - x];
+	                }
+	                values[j] = array;
+	            }
+	        }
+	}
+	
+	static void fillArrayWithRandomInts(Integer[] ar)
+	{
+		Random r = new Random();
+		for(int i = 0; i < ar.length; i++)
+		{
+			ar[i] = r.nextInt(101);
+		}
+	}
+	
+	static void printIntArray(Integer[] ar)
+	{
+		for(int i = 0; i < ar.length; i++)
+		{
+			System.out.print(ar[i] + " ");
+		}
+		System.out.println();
+	}
+}
