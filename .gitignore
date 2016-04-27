@@ -11,20 +11,20 @@ public class Driver
 		Driver.printIntArray(arrayOfNumbers);
 	}
 	
-	public static void BubbleSort(Integer [ ] num)
+	static void BubbleSort(Integer [] num)
 	{
-		int i;
+	    int i;
 	    boolean bool = true;   
 	    int bubble;   
 
 	    while (bool)
 	     {
-	    	  bool = false;    
-	        for( i = 0; i < num.length -1; i++ )
+	    	bool = false;    
+	        for(i = 0; i < num.length -1; i++)
 	        {
-	        	if ( num[i] < num[i+1] )   
+	            if (num[i] < num[i+1])   
 	            {
-	        		bubble = num[i];                
+	        	bubble = num[i];                
 	                num[i] = num[i+1 ];
 	                num[i+1 ] = bubble;
 	                bool = true;          
